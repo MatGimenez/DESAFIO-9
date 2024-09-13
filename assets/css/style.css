@@ -1,0 +1,214 @@
+nav {
+    grid-area: nav;
+    background-color: #295F98;
+    color: whitesmoke;
+    padding: 0rem 1.5rem 0rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+aside {
+    grid-area: aside;
+    background-color: #E1D7C6;
+    padding: 0.5em 0 0.5rem 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+aside p {
+    margin: 0;
+    padding: 0;
+}
+
+select {
+    font-size: 1rem;
+    margin: 5px;
+    padding: 0;
+    width: 50%;
+    height: 35px;
+    border: 1px grey;
+    border-radius: 5px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.galeria {
+    padding: 2rem;
+    grid-area: main;
+    display: grid;
+    gap: 1.5rem;
+    margin: 10px;
+    grid-template-columns: 1fr;
+}
+
+.selector {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.selector a {
+    text-decoration: none;
+    padding: 8px;
+    color: #295F98;
+    font-size: 1rem;
+    font-weight: 500;
+    border: solid 1px #E1D7C6;
+}
+
+.card {
+    border: solid 1px gray;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagen-car img {
+    padding-top: 40px;
+    width: 100%;
+}
+
+.detalles-car {
+    margin: 1rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.detalles-car button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #295F98;
+    border: none;
+    border-radius: 10px;
+    color: whitesmoke;
+
+
+}
+
+footer {
+    padding: 1rem;
+    grid-area: footer;
+    background-color: #071952;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.rrss {
+    display: flex;
+    gap: 10px;
+    font-size: 1.5rem;
+}
+
+footer h4 {
+    margin: 0;
+    padding: 5px;
+}
+
+.hidden-visible {
+    display: none;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-rows: 1fr 1fr 10fr 1fr;
+    grid-template-areas:
+        'nav'
+        'aside'
+        'main'
+        'footer'
+    ;
+}
+
+@media (min-width:576px) {
+    .menu-h {
+        display: none;
+    }
+
+    .hidden-visible {
+        display: inline;
+    }
+
+    .hidden-visible ul {
+        display: flex;
+        gap: 20px;
+        list-style-type: none;
+    }
+
+    .hidden-visible ul li {
+        text-decoration: none;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    body {
+        grid-template-rows: 1fr 10fr 1fr;
+        grid-template-columns: 20% 80%;
+        grid-template-areas:
+            'nav nav'
+            'aside main'
+            'footer footer'
+        ;
+    }
+
+    select {
+        width: 85%;
+    }
+
+}
+
+@media (min-width:992px) {
+
+    .galeria {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    body {
+        display: grid;
+        grid-template-rows: 1fr 10fr;
+        grid-template-columns: 15% 85%;
+        grid-template-areas:
+            'nav aside'
+            'nav main'
+            'footer main'
+        ;
+    }
+
+    nav {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .hidden-visible {
+        display: flex;
+        justify-content: center;
+        width: 60%;
+    }
+
+    .hidden-visible ul {
+        margin: 0;
+        padding: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
